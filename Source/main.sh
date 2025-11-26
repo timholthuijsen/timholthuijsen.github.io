@@ -46,3 +46,15 @@ echo ""
 echo "New timestamp of replaced file:"
 print_timestamp "$dest"
 
+
+# git auto commit and push
+echo "Commiting and pushing to git..."
+
+#get timestamp
+timestamp=$(date +"%Y-%m-%d %H:%M:%S")
+
+git add -A
+git commit -m "updating map at $timestamp"
+git push
+
+echo "git push complete"
