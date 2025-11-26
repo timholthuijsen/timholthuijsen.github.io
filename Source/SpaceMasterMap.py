@@ -66,7 +66,9 @@ for i, naam in enumerate(data['Name']):
     except:
         boolean = False
 
-data = data.dropna()
+# Keep only rows where Name, Latitude, and Longitude are present
+required_cols = ['Name', 'Latitude [deg]', 'Longitude [deg]']
+data = data.dropna(subset=required_cols)
 data
 
 
